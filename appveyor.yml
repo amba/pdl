@@ -9,7 +9,7 @@ install:
   # running under CI
   - set CI_TESTING=1
   - cinst StrawberryPerl --version %configuration%
-  - path C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
+  - path C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;C:\strawberry\c\bin;%PATH%
   - mkdir %APPVEYOR_BUILD_FOLDER%\tmp
   - set TMPDIR=%APPVEYOR_BUILD_FOLDER%\tmp
   - perl -V
