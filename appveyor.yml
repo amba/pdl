@@ -1,6 +1,6 @@
 configuration:
-  - 5.24.1.1
-  - 5.20.3.3
+#  - 5.24.1.1
+#  - 5.20.3.3
   - 5.14.4.1
   
 version: 1.0.{build}
@@ -13,7 +13,9 @@ install:
   - mkdir %APPVEYOR_BUILD_FOLDER%\tmp
   - set TMPDIR=%APPVEYOR_BUILD_FOLDER%\tmp
   - perl -V
-  - cpan App::cpanminus
+  - cpanm --version
+  - cpanm App::cpanminus
+  - cpanm --version
   - cpanm -q --showdeps --with-develop --with-suggests . | findstr /v "^perl\>" | cpanm -n
   - 'echo End intall at: & time /t'
 
