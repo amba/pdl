@@ -1,9 +1,14 @@
+configuration:
+  - 5.24.1.1
+  - 5.20.3.3
+  - 5.14.4.1
+  
 version: 1.0.{build}
 
 install:
   # running under CI
   - set CI_TESTING=1
-  - cinst StrawberryPerl
+  - cinst StrawberryPerl --version %configuration%
   - path C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
   - mkdir %APPVEYOR_BUILD_FOLDER%\tmp
   - set TMPDIR=%APPVEYOR_BUILD_FOLDER%\tmp
